@@ -1,14 +1,13 @@
-import logging
 from urllib.request import urlopen
 
 
-def readInput():
+def read_input():
     with open('input.txt') as f:
         lines = [x for x in f.read().split("\n\n")]
     return lines
 
-def resolveTask():
-    data = readInput()
+def resolve_task():
+    data = read_input()
     elf = [line.split() for line in data]
     calories = sorted([sum(int(snack) for snack in snacks) for snacks in elf], reverse=True)
 
@@ -18,5 +17,5 @@ def resolveTask():
     print('Task 2')
     print(sum(calories[:3]))
 
-resolveTask()
+resolve_task()
 
